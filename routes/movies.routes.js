@@ -8,7 +8,7 @@ const router = require('express').Router()
 router.get("/create", async (req, res) => {
     try{
         const allCelebrities = await Celebrity.find()
-        console.log(allCelebrities)
+        //console.log(allCelebrities)
        
         res.render("movies/new-movie", {allCelebrities});
     }
@@ -24,9 +24,13 @@ router.post("/create", async (req, res) => {
 });
 
 
-router.get("/", (req, res) => {
-
-    res.render("movies/movies");
+router.get("/", async (req, res) => {
+    const allMovies = await Movie.find().populate('cast')
+    res.render("movies/movies", {allMovies});
 });
+
+// router.get("/:id", async (req, res) => {
+
+// });
 
 module.exports = router

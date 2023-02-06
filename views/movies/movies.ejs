@@ -1,3 +1,24 @@
 <h1>Movies</h1>
 
 <a href="/movies/create">Add a movie</a>
+
+<% allMovies.forEach(movie => { %>
+    <div style="border:1px solid black;padding:10px;margin:10px;">
+        <h3>Movie: </h3><%= movie.title  %>
+        
+        
+        <h3>Genre: </h3><%= movie.genre  %>
+        <h3>Plot:</h3> <%= movie.plot  %>
+        <h3>Cast:</h3>
+
+        <ul>
+            <% movie.cast.forEach(cast => { %>
+    
+            <li><%= cast.name  %> </li>
+              
+             <% }) %>
+        </ul> 
+    </div>
+<% }) %>
+
+
