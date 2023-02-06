@@ -1,1 +1,9 @@
-<h1>Celebrities</h1>
+<h2>Celebrities</h2>
+
+<% allCelebrities.forEach(celebrity => { %>
+    <div style="border:1px solid black;padding:10px;margin:10px;">
+        <h3>Name: </h3><%= celebrity.name  %>
+        <h3>Occupation: </h3><%= celebrity.occupation  %>
+        <h3>Catch Phrase:</h3> <%= celebrity.catchPhrase  %>
+    </div>
+<% }) %>
