@@ -1,0 +1,30 @@
+<h1>Edit movie</h1>
+
+
+<form action="/movies/<%= editedMovie._id %>/edit" method="POST">
+    <label>Movie Name: 
+        <input type="text" name="title" value="<%= editedMovie.title %>"/>
+    </label> </br>
+    <label>Genre: 
+        <input type="text" name="genre" value="<%= editedMovie.genre %>"/>
+    </label></br>
+    <label>Plot: 
+        <textarea name="plot"/><%= editedMovie.plot %></textarea>
+    </label></br>
+    <label>Cast: 
+        <select name="cast" id="cast" multiple>
+
+            <% allCelebrities.forEach(celeb => { %>
+                //BONUS: Make the current cast members selected so the user knows who is in the cast currently. (NOT IMPLEMENTED YET)
+
+                <option value="<%= celeb._id %>"><%= celeb.name %></option>
+
+
+             
+            <% }) %>
+
+          </select>
+    </label><br/>
+    <button type="submit">Edit Movie</button>
+</form>
+
