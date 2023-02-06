@@ -5,6 +5,14 @@ const Celebrity = require('../models/Celebrity.model')
 const router = require('express').Router()
 // all your routes here
 
+router.get("/:id", async (req, res) => {
+    const movieID = req.params.id
+    const movieDetails = await Movie.findById(movieID).populate('cast')
+    console.log(movieDetails)
+    res.render("movies/movie-details", {movieDetails});
+});
+
+
 router.get("/create", async (req, res) => {
     try{
         const allCelebrities = await Celebrity.find()
@@ -29,8 +37,5 @@ router.get("/", async (req, res) => {
     res.render("movies/movies", {allMovies});
 });
 
-// router.get("/:id", async (req, res) => {
-
-// });
 
 module.exports = router

@@ -1,0 +1,12 @@
+<h1>Movie Details</h1>
+
+<p>Title: <%= movieDetails.title%></p>
+<p>Genre: <%= movieDetails.genre%></p>
+<p>Plot: <%= movieDetails.plot%></p>
+<p>Cast:</p>
+<ul>
+<% movieDetails.cast.forEach(cast => { %>
+    <li><%= cast.name  %> </li>
+     <% }) %>
+</ul>
+
