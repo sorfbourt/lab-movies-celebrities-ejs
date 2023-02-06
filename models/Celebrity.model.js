@@ -14,6 +14,6 @@ const celebSchema = new Schema(
   }
 )
 
-const Recipe = model('Celebrity', celebSchema)
+const Celebrity = model('Celebrity', celebSchema)
 
 module.exports = Celebrity
