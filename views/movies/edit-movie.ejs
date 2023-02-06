@@ -11,6 +11,51 @@
     <label>Plot: 
         <textarea name="plot"/><%= editedMovie.plot %></textarea>
     </label></br>
+
+   
+        <% allCelebrities.forEach(celeb => { %> 
+    <% editedMovie.cast.forEach(cast => { %>
+
+
+            <% if (cast.name === celeb.name) { %>
+                <b><%= celeb.name %> / <%= cast.name %><br/></b>
+            <% } %>
+            <%= celeb.name %><br/>
+
+
+         
+        <% }) %>
+        
+
+    <% }) %>
+
+
+
+
+    <label>Cast: 
+        <select name="cast" id="cast" multiple>
+
+            <% editedMovie.cast.forEach(cast => { %>
+
+
+                <option value="<%= cast._id %>" selected><%= cast.name %></option>
+
+                
+
+             
+            <% }) %>
+
+
+
+          </select>
+    </label><br/>
+
+
+
+
+
+
+
     <label>Cast: 
         <select name="cast" id="cast" multiple>
 
